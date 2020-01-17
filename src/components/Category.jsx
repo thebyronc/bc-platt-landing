@@ -1,8 +1,7 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { colors, breakpoints, boundingbox } from "../style-utilities/variables"
+import { breakpoints } from "../style-utilities/variables"
 
 import IconArrow from "../images/ic/black/ic_arrow_forward.png"
 

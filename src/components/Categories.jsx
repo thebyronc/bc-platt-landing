@@ -16,7 +16,7 @@ import IconPlace from "../images/ic/black/ic_place.png"
 const StyledCategories = styled.div` 
   max-width: ${breakpoints.ultraWideDesktop};
   margin: auto -16px;
-  
+  background-color: ${colors.white};
 `
 
 const Categories = () => (

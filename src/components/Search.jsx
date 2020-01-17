@@ -38,8 +38,8 @@ const StyledInput = styled.input`
 const StyledIcon = styled.div`
   width: 42px;
   background-color: ${colors.white};
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
