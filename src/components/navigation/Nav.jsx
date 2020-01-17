@@ -13,10 +13,15 @@ const StyledNav = styled.nav`
   max-width: ${breakpoints.ultraWideDesktop};
   margin: 0 auto;
   padding: 16px;
+  justify-content: space-between;
 `
 const StyledLogo = styled.div`
+  display: flex;
+  align-items: center;
   max-width: 300px;
-  margin-bottom: 0px;
+  img {
+    margin-bottom: 0px;
+  }
 `
 
 const Nav = ({ siteTitle }) => (
