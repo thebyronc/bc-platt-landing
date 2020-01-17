@@ -15,6 +15,15 @@ const StyledSearch = styled.div`
 const StyledForm = styled.form`
   margin-bottom: 0px;
   display: flex;
+  input {
+    height: 42px;
+    display: flex;
+    flex: 1 1 0%;
+    border: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding: 0 16px;
+  }
 `
 
 const StyledInput = styled.input`
@@ -44,7 +53,7 @@ const StyledIcon = styled.div`
 const Search = () => (
   <StyledSearch>
     <StyledForm>
-      <StyledInput></StyledInput>
+      <input placeholder="What are you looking for?"></input>
       <StyledIcon>
         <img src={IconSearch} />
       </StyledIcon>
