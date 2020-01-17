@@ -6,16 +6,31 @@ import { colors, breakpoints, boundingbox } from "../style-utilities/variables"
 
 import IconArrow from "../images/ic/black/ic_arrow_forward.png"
 
-const StyledCategory = styled.div` 
+const StyledCategory = styled(Link)` 
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 32px;
   border-bottom: 1px solid #cccccc;
-  padding: 20px 16px;;
+  margin: 0px 8px;
+  padding: 20px 8px;
+  &:first-child {
+    margin-top: -16px;
+    padding: 32px 8px;
+    font-weight: 700;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
 `
 const StyledLabel = styled.div`
   flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  p {
+    margin-left: 8px;
+    margin-bottom: 0px;
+  }
 `
 
 const StyledIcon = styled.div`
@@ -26,10 +41,15 @@ const StyledIcon = styled.div`
   align-items: center;
 `
 
-const Category = ({name}) => (
-  <StyledCategory>
+const Category = ({name, catIcon}) => (
+  <StyledCategory to="/">
     <StyledLabel>
-      {name}
+      <StyledIcon>
+        <img src={catIcon} />
+      </StyledIcon>
+      <p>
+        {name}
+      </p>
     </StyledLabel>
     <StyledIcon>
       <img src={IconArrow} />

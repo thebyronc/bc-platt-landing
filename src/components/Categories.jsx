@@ -5,7 +5,13 @@ import styled from "styled-components"
 import { colors, breakpoints } from "../style-utilities/variables"
 
 import Category from "./Category"
-import IconSearch from "../images/ic/black/ic_search.png"
+import IconCategories from "../images/ic/black/ic_categories.png"
+import IconListCheck from "../images/ic/black/ic_playlist_add_check.png"
+import IconList from "../images/ic/black/ic_list.png"
+import IconChat from "../images/ic/green/ic_chat_active.png"
+import IconCircle from "../images/ic/black/ic_check_circle.png"
+import IconPerson from "../images/ic/black/ic_person.png"
+import IconPlace from "../images/ic/black/ic_place.png"
 
 const StyledCategories = styled.div` 
   max-width: ${breakpoints.ultraWideDesktop};
@@ -15,13 +21,34 @@ const StyledCategories = styled.div`
 
 const Categories = () => (
   <StyledCategories>
-    <Category name={'Shop all categories'}></Category>
-    <Category name={'My Catalog'}></Category>
-    <Category name={'My List'}></Category>
-    <Category name={'Live Help'}></Category>
-    <Category name={'PIM'}></Category>
-    <Category name={'Account'}></Category>
-    <Category name={'Branch Locations'}></Category>
+    <Category 
+      catIcon={IconCategories} 
+      name={'Shop all categories'}>    
+    </Category>
+    <Category 
+      catIcon={IconListCheck} 
+      name={'My Catalog'}>
+    </Category>
+    <Category 
+      catIcon={IconList} 
+      name={'My List'}>
+    </Category>
+    <Category 
+      catIcon={IconChat} 
+      name={'Live Help'}>
+    </Category>
+    <Category 
+      catIcon={IconCircle} 
+      name={'PIM'}>
+    </Category>
+    <Category 
+      catIcon={IconPerson} 
+      name={'Account'}>
+    </Category>
+    <Category 
+      catIcon={IconPlace} 
+      name={'Branch Locations'}>
+    </Category>
   </StyledCategories>
 )
 
