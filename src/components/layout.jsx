@@ -9,12 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { breakpoints } from "../style-utilities/variables"
+import { colors, breakpoints } from "../style-utilities/variables"
 
 import Header from "./Header"
 import "./layout.css"
 
 const StyledMain = styled.main`
+  background-color: ${colors.background};
   max-width: ${breakpoints.ultraWideDesktop};
   margin: 0 auto;
   padding: 16px;
