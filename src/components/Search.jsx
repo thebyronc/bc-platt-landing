@@ -47,6 +47,7 @@ class Search extends Component {
     super(props);
     this.state = {
       suggestions: [],
+      dummy: [],
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
@@ -61,10 +62,23 @@ class Search extends Component {
       'Golden',
       'Husky',
     ];
+    let fetchedApi = [];
+
+    fetch('https://dog.ceo/api/breeds/list/all')
+      .then(results => {
+        return results.json();
+      }).then(data => {
+        let dogList = data.message;
+        let dogApiFetched = [];
+
+        for(var i in data.message) {
+          dogApiFetched.push([i, data.message [i]][0]);
+        }
     
-    this.setState({
-      suggestions: dogApi
-    });
+        this.setState({
+          suggestions: dogApiFetched
+        });
+      });
   }
 
   onChange = e => {
