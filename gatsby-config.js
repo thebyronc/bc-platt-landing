@@ -27,6 +27,7 @@ module.exports = {
         icon: `src/images/img/ic_platt-u.png`, // This path is relative to the root of the site.
       },
     },
+    `styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
