@@ -4,6 +4,7 @@ import { colors, breakpoints } from "../../style-utilities/variables"
 
 import GridRecentlyViewed from "./GridRecentlyViewed"
 import GridAppStore from "./GridAppStore"
+import GridLearnMore from "./GridLearnMore"
 import GridItem from "./GridItem"
 import DealImg from "../../images/panel/deal.png"
 import SuperToolImg from "../../images/img/super-tool-day.png"
@@ -22,6 +23,7 @@ const StyledGrids = styled.div`
   grid-template-areas: 
     'itemFull1 itemFull1'
     'itemFull2 itemFull2'
+    'itemFull2 itemFull2'
     'itemFull3 itemFull3'
     'item1A item1B'
     'item2A item2B'
@@ -36,7 +38,7 @@ const StyledGridDeal = styled(GridItem)`
   grid-area: itemFull1;
 `
 
-const StyledGridLearnMore = styled(GridItem)`
+const StyledGridLearnMore = styled(GridLearnMore)`
   grid-area: itemFull2;
 `
 
@@ -68,7 +70,6 @@ const Grids = () => (
     <StyledGridDeal>
     </StyledGridDeal>
     <StyledGridLearnMore>
-      <p>Learn More</p>
     </StyledGridLearnMore>
     <StyledGridRecentlyViewed>
     </StyledGridRecentlyViewed>

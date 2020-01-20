@@ -12,6 +12,7 @@ import styled from "styled-components"
 import { colors, breakpoints } from "../style-utilities/variables"
 
 import Header from "./Header"
+import Footer from "./Footer"
 import "./layout.css"
 
 const StyledMain = styled.main`
@@ -36,11 +37,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <StyledMain>{children}</StyledMain>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer></Footer>
     </>
   )
 }

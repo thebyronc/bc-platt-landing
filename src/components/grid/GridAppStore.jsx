@@ -4,16 +4,18 @@ import { Link } from "gatsby"
 import { colors, breakpoints } from "../../style-utilities/variables"
 
 import GridItem from "./GridItem"
-import Recent11Img from "../../images/recent/11.png"
-import Recent22Img from "../../images/recent/22.png"
+import AppGetImg from "../../images/panel/app-get-banner.png"
 
 const StyledGridAppStore = styled(GridItem)`
+  padding: 0px;
 `
 
 const StyledTitle = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 50px;
   p {
     font-weight: 700;
     margin: 0px;
@@ -28,25 +30,21 @@ const StyledLink = styled(Link)`
 `
 
 const StyledImgContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  img {
-    margin-bottom: 0px;
-    width: 33%;
-  }
+  width: 100%;
+  height: 130px;
+  background-image: url(${AppGetImg});
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
 `
 
 const GridAppStore = ({className}) => (
   <StyledGridAppStore className={className}>
-    <StyledTitle>
-      <p>Recently Viewed</p>
-      <StyledLink to="/">View All</StyledLink>
-    </StyledTitle>
     <StyledImgContainer>
-      <img src={Recent11Img} alt="Red Machine" />
-      <img src={Recent22Img} alt="Silver Machine" />
-      <img src={Recent22Img} alt="Silver Machine" />
     </StyledImgContainer>
+    <StyledTitle>
+      <p>Shop better, download the Platt App today</p>
+    </StyledTitle>
   </StyledGridAppStore>
 )
 
