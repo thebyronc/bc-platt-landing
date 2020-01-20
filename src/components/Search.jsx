@@ -56,19 +56,11 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    let dogApi = [
-      'Aussie',
-      'Border Collie',
-      'Golden',
-      'Husky',
-    ];
-    let fetchedApi = [];
 
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(results => {
         return results.json();
       }).then(data => {
-        let dogList = data.message;
         let dogApiFetched = [];
 
         for(var i in data.message) {

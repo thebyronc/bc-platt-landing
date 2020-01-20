@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from 'gatsby';
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
@@ -17,5 +17,14 @@ const IndexPage = () => (
     <Grids></Grids>
   </Layout>
 )
+
+// export const query = graphql``
+// {
+//   dogceo {
+//     allSpecies {
+//       name
+//     }
+//   }
+// }
 
 export default IndexPage

@@ -1,13 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { colors, breakpoints } from "../../style-utilities/variables"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 import GridRecentlyViewed from "./GridRecentlyViewed"
 import GridAppStore from "./GridAppStore"
 import GridLearnMore from "./GridLearnMore"
 import GridItem from "./GridItem"
 import DealImg from "../../images/panel/deal.png"
-import SuperToolImg from "../../images/img/super-tool-day.png"
+// import SuperToolImg from "../../images/img/super-tool-day.png"
+import SuperToolImg from "../../../static/img/super-tool-day.png"
 import LocationBImg from "../../images/img/ic_location_b.png"
 import HelpCenterImg from "../../images/img/ic_helpcenter.png"
 import PlattUImg from "../../images/img/ic_platt-u.png"
@@ -88,32 +91,35 @@ const StyledGridAppStore = styled(GridAppStore)`
   grid-area: itemFull4;
 `
 
-const Grids = () => (
-  <StyledGrids>
-    <StyledGridDeal>
-    </StyledGridDeal>
-    <StyledGridLearnMore>
-    </StyledGridLearnMore>
-    <StyledGridRecentlyViewed>
-    </StyledGridRecentlyViewed>
-    <StyledGridItem>
-      <img src={SuperToolImg} alt="Super Tool Day" />
-      <p>Super Tool Day &<br/> Dynamic Data Day</p>
-    </StyledGridItem>
-    <StyledGridItem>
-      <img src={LocationBImg} alt="Branch Locations" />
-      <p>Branch Locations</p>
-    </StyledGridItem>
-    <StyledGridItem>
-      <img src={HelpCenterImg} alt="Branch Locations" />
-      <p>Help Center</p>
-    </StyledGridItem>
-    <StyledGridItem>
-      <img src={PlattUImg} alt="Branch Locations" />
-      <p>Platt University</p>
-    </StyledGridItem>
-    <StyledGridAppStore></StyledGridAppStore>
-  </StyledGrids>
-)
+const Grids = () => {
+
+  return (
+    <StyledGrids>
+      <StyledGridDeal>
+      </StyledGridDeal>
+      <StyledGridLearnMore>
+      </StyledGridLearnMore>
+      <StyledGridRecentlyViewed>
+      </StyledGridRecentlyViewed>
+      <StyledGridItem>
+        <img src={SuperToolImg} alt="Super Tool Day" />
+        <p>Super Tool Day &<br/> Dynamic Data Day</p>
+      </StyledGridItem>
+      <StyledGridItem>
+        <img src={LocationBImg} alt="Branch Locations" />
+        <p>Branch Locations</p>
+      </StyledGridItem>
+      <StyledGridItem>
+        <img src={HelpCenterImg} alt="Branch Locations" />
+        <p>Help Center</p>
+      </StyledGridItem>
+      <StyledGridItem>
+        <img src={PlattUImg} alt="Branch Locations" />
+        <p>Platt University</p>
+      </StyledGridItem>
+      <StyledGridAppStore></StyledGridAppStore>
+    </StyledGrids>
+  )
+}
 
 export default Grids

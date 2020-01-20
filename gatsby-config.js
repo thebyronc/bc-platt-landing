@@ -24,10 +24,21 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/img/ic_platt-u.png`, // This path is relative to the root of the site.
+        icon: `./src/images/img/ic_platt-u.png`, // This path is relative to the root of the site.
       },
     },
-    `styled-components`,
+    `gatsby-plugin-styled-components`,
+    // {
+    //   resolve: "gatsby-source-graphql",
+    //   options: {
+    //     // Arbitrary name for the remote schema Query type
+    //     typeName: "DOGCEO",
+    //     // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+    //     fieldName: "dogceo",
+    //     // Url to query from
+    //     url: "https://dog.ceo/api/breeds/list/all",
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
