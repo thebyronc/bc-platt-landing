@@ -7,7 +7,7 @@ import GridItem from "./GridItem"
 import Recent11Img from "../../images/recent/11.png"
 import Recent22Img from "../../images/recent/22.png"
 
-const StyledGridRecentlyViewed = styled(GridItem)`
+const StyledGridAppStore = styled(GridItem)`
 `
 
 const StyledTitle = styled.div`
@@ -36,8 +36,8 @@ const StyledImgContainer = styled.div`
   }
 `
 
-const GridRecentlyViewed = ({className}) => (
-  <StyledGridRecentlyViewed className={className}>
+const GridAppStore = ({className}) => (
+  <StyledGridAppStore className={className}>
     <StyledTitle>
       <p>Recently Viewed</p>
       <StyledLink to="/">View All</StyledLink>
@@ -47,7 +47,7 @@ const GridRecentlyViewed = ({className}) => (
       <img src={Recent22Img} alt="Silver Machine" />
       <img src={Recent22Img} alt="Silver Machine" />
     </StyledImgContainer>
-  </StyledGridRecentlyViewed>
+  </StyledGridAppStore>
 )
 
-export default GridRecentlyViewed
+export default GridAppStore

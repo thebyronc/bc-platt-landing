@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { colors, breakpoints } from "../../style-utilities/variables"
 
+import GridRecentlyViewed from "./GridRecentlyViewed"
+import GridAppStore from "./GridAppStore"
 import GridItem from "./GridItem"
 import DealImg from "../../images/panel/deal.png"
 import SuperToolImg from "../../images/img/super-tool-day.png"
@@ -20,8 +22,11 @@ const StyledGrids = styled.div`
   grid-template-areas: 
     'itemFull1 itemFull1'
     'itemFull2 itemFull2'
+    'itemFull3 itemFull3'
     'item1A item1B'
-    'item2A item2B';
+    'item2A item2B'
+    'itemFull4 itemFull4'
+  ;
 `
 
 const StyledGridDeal = styled(GridItem)`
@@ -35,19 +40,27 @@ const StyledGridLearnMore = styled(GridItem)`
   grid-area: itemFull2;
 `
 
+const StyledGridRecentlyViewed = styled(GridRecentlyViewed)`
+  grid-area: itemFull3;
+`
+
 const StyledGridItem = styled(GridItem)`
-  &:nth-child(3) {
+  &:nth-child(4) {
     grid-area: item1A;
   }
-  &:nth-child(4) {
+  &:nth-child(5) {
     grid-area: item1B;
   }
-  &:nth-child(5) {
+  &:nth-child(6) {
     grid-area: item2A;
   }
-  &:nth-child(6) {
+  &:nth-child(7) {
     grid-area: item2B;
   }
+`
+
+const StyledGridAppStore = styled(GridAppStore)`
+  grid-area: itemFull4;
 `
 
 const Grids = () => (
@@ -57,6 +70,8 @@ const Grids = () => (
     <StyledGridLearnMore>
       <p>Learn More</p>
     </StyledGridLearnMore>
+    <StyledGridRecentlyViewed>
+    </StyledGridRecentlyViewed>
     <StyledGridItem>
       <img src={SuperToolImg} alt="Super Tool Day" />
       <p>Super Tool Day &<br/> Dynamic Data Day</p>
@@ -73,6 +88,7 @@ const Grids = () => (
       <img src={PlattUImg} alt="Branch Locations" />
       <p>Platt University</p>
     </StyledGridItem>
+    <StyledGridAppStore></StyledGridAppStore>
   </StyledGrids>
 )
 
