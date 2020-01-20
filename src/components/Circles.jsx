@@ -17,6 +17,9 @@ const StyledCircles = styled.div`
   img {
     margin-bottom: 0px;
   }
+  @media (min-width: ${breakpoints.mobile}) {
+    display: none;
+  }
 `
 
 const Circles = () => (

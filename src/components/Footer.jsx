@@ -1,8 +1,6 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../style-utilities/variables"
+import { colors, breakpoints } from "../style-utilities/variables"
 
 import IconChat from "../images/ic/black/ic_comment.png"
 
@@ -45,6 +43,8 @@ const StyledButton = styled.button`
 const StyledBottomNav = styled.div`
   display: flex;
   justify-content: space-around;
+  margin: auto;
+  max-width: ${breakpoints.ultraWideDesktop};
   p {
     font-weight: 700;
   }

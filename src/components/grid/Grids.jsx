@@ -18,7 +18,7 @@ const StyledGrids = styled.div`
   padding: 16px 0px;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 180px 180px 180px;
+  grid-template-rows: 180px 180px 180px 180px 180px 180px 180px;
   grid-gap: 16px;
   grid-template-areas: 
     'itemFull1 itemFull1'
@@ -29,6 +29,20 @@ const StyledGrids = styled.div`
     'item2A item2B'
     'itemFull4 itemFull4'
   ;
+  @media (min-width: ${breakpoints.mobile}) {
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 200px 200px 200px 200px;
+    grid-template-areas: 
+    'itemFull1 itemFull1 itemFull1 itemFull1'
+    'itemHalf2 itemHalf2 itemHalf3 itemHalf3'
+    'item1A item1B item2A item2B'
+    'itemFull4 itemFull4 itemFull4 itemFull4'
+    ;
+  }
+  @media (min-width: ${breakpoints.desktop}) {
+    grid-template-rows: 220px 220px 220px 220px;
+    grid-gap: 32px;
+  }
 `
 
 const StyledGridDeal = styled(GridItem)`
@@ -36,14 +50,23 @@ const StyledGridDeal = styled(GridItem)`
   background-size: cover;
   background-position: center;
   grid-area: itemFull1;
+  @media (min-width: ${breakpoints.mobile}) {
+    grid-area: itemHalf2;
+  }
 `
 
 const StyledGridLearnMore = styled(GridLearnMore)`
-  grid-area: itemFull2;
+grid-area: itemFull2;
+  @media (min-width: ${breakpoints.mobile}) {
+    grid-area: itemFull1;
+  }
 `
 
 const StyledGridRecentlyViewed = styled(GridRecentlyViewed)`
   grid-area: itemFull3;
+  @media (min-width: ${breakpoints.mobile}) {
+    grid-area: itemHalf3;
+  }
 `
 
 const StyledGridItem = styled(GridItem)`

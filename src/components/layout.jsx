@@ -19,7 +19,7 @@ const StyledMain = styled.main`
   background-color: ${colors.background};
   max-width: ${breakpoints.ultraWideDesktop};
   margin: 0 auto;
-  padding: 16px;
+  padding: 0 16px 16px 16px;
 `
 
 const Layout = ({ children }) => {

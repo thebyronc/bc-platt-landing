@@ -14,12 +14,23 @@ const StyledCategory = styled(Link)`
   margin: 0px 8px;
   padding: 20px 8px;
   &:first-child {
-    margin-top: -16px;
     padding: 32px 8px;
     font-weight: 700;
   }
   &:last-child {
     border-bottom: none;
+  }
+
+  @media (min-width: ${breakpoints.mobile}) {
+    border: 1px solid #cccccc;
+    margin: 0px 0px;
+    &:first-child {
+ 
+      padding: 24px 8px;
+    }
+    &:last-child {
+      border-bottom:  1px solid #cccccc;
+    }
   }
 `
 const StyledLabel = styled.div`
@@ -30,6 +41,9 @@ const StyledLabel = styled.div`
     margin-left: 8px;
     margin-bottom: 0px;
   }
+  @media (min-width: ${breakpoints.mobile}) {
+    justify-content: center;
+  }
 `
 
 const StyledIcon = styled.div`
@@ -38,10 +52,15 @@ const StyledIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (min-width: ${breakpoints.mobile}) {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
 `
 
-const Category = ({name, catIcon}) => (
-  <StyledCategory to="/">
+const Category = ({className, name, catIcon}) => (
+  <StyledCategory to="/" className={className}>
     <StyledLabel>
       <StyledIcon>
         <img src={catIcon} />

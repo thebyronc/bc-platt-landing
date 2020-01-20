@@ -17,38 +17,75 @@ const StyledCategories = styled.div`
   max-width: ${breakpoints.ultraWideDesktop};
   margin: auto -16px;
   background-color: ${colors.white};
+
+  @media (min-width: ${breakpoints.mobile}) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      'category category category' 
+      'item1A item1B item1C'
+      'item2A item2B item2C'
+    ;
+  }
+`
+
+const StyledCategory = styled(Category)`
+  @media (min-width: ${breakpoints.mobile}) {
+    &:nth-child(1) {
+      grid-area: category;
+    }
+    &:nth-child(2) {
+      grid-area: item1A;
+    }
+    &:nth-child(3) {
+      grid-area: item1B;
+    }
+    &:nth-child(4) {
+      grid-area: item1C;
+    }
+    &:nth-child(5) {
+      grid-area: item2A;
+    }
+    &:nth-child(6) {
+      grid-area: item2B;
+    }
+    &:nth-child(7) {
+      grid-area: item2C;
+    }
+  }
 `
 
 const Categories = () => (
   <StyledCategories>
-    <Category 
+    <StyledCategory 
       catIcon={IconCategories} 
       name={'Shop all categories'}>    
-    </Category>
-    <Category 
+    </StyledCategory>
+    <StyledCategory 
       catIcon={IconListCheck} 
       name={'My Catalog'}>
-    </Category>
-    <Category 
+    </StyledCategory>
+    <StyledCategory 
       catIcon={IconList} 
       name={'My List'}>
-    </Category>
-    <Category 
+    </StyledCategory>
+    <StyledCategory 
       catIcon={IconChat} 
       name={'Live Help'}>
-    </Category>
-    <Category 
+    </StyledCategory>
+    <StyledCategory 
       catIcon={IconCircle} 
       name={'PIM'}>
-    </Category>
-    <Category 
+    </StyledCategory>
+    <StyledCategory 
       catIcon={IconPerson} 
       name={'Account'}>
-    </Category>
-    <Category 
+    </StyledCategory>
+    <StyledCategory 
       catIcon={IconPlace} 
       name={'Branch Locations'}>
-    </Category>
+    </StyledCategory>
   </StyledCategories>
 )
 

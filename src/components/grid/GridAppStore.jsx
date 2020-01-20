@@ -15,7 +15,7 @@ const StyledTitle = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 20%;
   p {
     font-weight: 700;
     margin: 0px;
@@ -23,15 +23,9 @@ const StyledTitle = styled.div`
   }
 `
 
-const StyledLink = styled(Link)`
-  font-size: .8rem;
-  font-weight: 700;
-  color: ${colors.linkColor};
-`
-
 const StyledImgContainer = styled.div`
   width: 100%;
-  height: 130px;
+  height: 80%;
   background-image: url(${AppGetImg});
   background-size: cover;
   background-position: top right;
