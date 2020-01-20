@@ -46,7 +46,8 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfSuggestion: 0,
+      suggestions: [],
+      activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
       userInput: ""
@@ -54,7 +55,7 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    let filtered = [
+    let dogApi = [
       'Aussie',
       'Border Collie',
       'Golden',
@@ -62,33 +63,55 @@ class Search extends Component {
     ];
     
     this.setState({
-      filteredSuggestions: {}
+      suggestions: dogApi
     });
   }
 
   onChange = e => {
+    const suggestions = this.state.suggestions;
+    const userInput = e.currentTarget.value;
+    
+    const filteredSuggestions = suggestions.filter(
+      suggestion =>
+        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+    );
+
     this.setState({
+      activeSuggestion: 0,
+      filteredSuggestions,
+      showSuggestions: true,
       userInput: e.currentTarget.value
     });
   }
 
   render() {
+    let SuggestionsComponent;
+    if(this.state.showSuggestions && this.state.userInput) {
+      if (this.state.filteredSuggestions.length) {
+        SuggestionsComponent = (
+          <Suggestions>
+            {this.state.filteredSuggestions.map((suggestion, index) => {
+              return ( <li>{suggestion}</li> )
+            })}
+          </Suggestions>
+        )
+      }
+    }
+
     return(
       <StyledSearch>
         <StyledForm>
           
           <StyledInput 
-            placeholder="What are you looking for?"
+            placeholder="What are you looking for? (Search For Dog Breeds)"
             onChange={this.onChange}
-            // onKeyDown={this.onKeyDown}
-            // value={this.onChange}
           >          
           </StyledInput>
           
           <StyledIcon>
             <img src={IconSearch} alt="Search" />
           </StyledIcon>
-          <Suggestions></Suggestions>
+          {SuggestionsComponent}
         </StyledForm>
       </StyledSearch>
     );

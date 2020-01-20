@@ -22,20 +22,15 @@ class Suggestions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeSuggestion: 0,
       filteredSuggestions: [],
-      showSuggestions: false,
-      userInput: ""
     };
   }
 
   render() {
+    
     return(
       <StyledSuggestions>
-        <li>dog</li>
-        <li>dog</li>
-        <li>dog</li>
-        <li>dog</li>
+        {this.props.children}
       </StyledSuggestions>
     );
   }
