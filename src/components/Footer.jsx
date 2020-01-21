@@ -59,7 +59,7 @@ const Footer = () => (
     <h4>4 a.m. - 12 a.m. (pst)</h4>
     <h4>7 Days a week</h4>
     <StyledButton>
-      <img src={IconChat} />
+      <img src={IconChat} alt="" />
       <p>
         Live Help
       </p>

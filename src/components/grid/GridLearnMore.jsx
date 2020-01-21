@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import { colors, breakpoints } from "../../style-utilities/variables"
 
 import GridItem from "./GridItem"

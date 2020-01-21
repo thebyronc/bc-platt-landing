@@ -1,7 +1,6 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
-import { colors, breakpoints } from "../../style-utilities/variables"
+import { colors } from "../../style-utilities/variables"
 
 const StyledGridItem = styled.div` 
   background-color: ${colors.white};
