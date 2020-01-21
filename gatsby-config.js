@@ -16,6 +16,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -37,9 +38,17 @@ module.exports = {
     //     // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
     //     fieldName: "dogceo",
     //     // Url to query from
-    //     url: "https://dog.ceo/api/breeds/list/all",
+    //     url: "https://api.graphcms.com/simple/v1/swapi",
     //   },
     // },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "SWAPI",
+        fieldName: "swapi",
+        url: "https://api.graphcms.com/simple/v1/swapi",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

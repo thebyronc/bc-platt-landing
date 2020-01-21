@@ -1,7 +1,6 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 import { colors } from "../style-utilities/variables"
 
 import Nav from "./navigation/nav"
@@ -13,11 +12,21 @@ const StyledHeader = styled.header`
 `
 
 
-const Header = () => (
-  <StyledHeader>
-    <Nav></Nav>
-    <Search></Search>
-  </StyledHeader>
-)
-
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      swapi {
+        allVehicles {
+          name
+        }
+      }
+    }
+  `)
+  return(
+    <StyledHeader>
+      <Nav></Nav>
+      <Search data={data.swapi.allVehicles}></Search>
+    </StyledHeader>
+  )
+}
 export default Header

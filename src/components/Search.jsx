@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import { colors, breakpoints } from "../style-utilities/variables"
 
@@ -42,6 +41,8 @@ const StyledIcon = styled.div`
   }
 `
 
+
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -54,26 +55,35 @@ class Search extends Component {
       userInput: ""
     };
   }
-
+  
   componentDidMount() {
+    // fetch('https://dog.ceo/api/breeds/list/all')
+    //   .then(results => {
+    //     return results.json();
+    //   }).then(data => {
+    //     let dogApiFetched = [];
 
-    fetch('https://dog.ceo/api/breeds/list/all')
-      .then(results => {
-        return results.json();
-      }).then(data => {
-        let dogApiFetched = [];
-
-        for(var i in data.message) {
-          dogApiFetched.push([i, data.message [i]][0]);
-        }
+    //     for(var i in data.message) {
+    //       dogApiFetched.push([i, data.message [i]][0]);
+    //     }
     
-        this.setState({
-          suggestions: dogApiFetched
-        });
-      });
+    //     this.setState({
+    //       suggestions: dogApiFetched
+    //     });
+    //   });
+
+    const list = this.props.data;
+    let dataForSearch = [];
+    for(var i in list) {
+      dataForSearch.push(list[i]['name']);
+    }
+    this.setState({
+      suggestions: dataForSearch
+    });
   }
 
   onChange = e => {
+    e.preventDefault();
     const suggestions = this.state.suggestions;
     const userInput = e.currentTarget.value;
     
@@ -104,12 +114,14 @@ class Search extends Component {
       }
     }
 
+    
+
     return(
       <StyledSearch>
         <StyledForm>
           
           <StyledInput 
-            placeholder="What are you looking for? (Search For Dog Breeds)"
+            placeholder="What are you looking for? (Search For Starwars Vehicles)"
             onChange={this.onChange}
           >          
           </StyledInput>
