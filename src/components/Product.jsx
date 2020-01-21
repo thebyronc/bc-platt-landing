@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { colors, breakpoints } from "../style-utilities/variables"
+import Img from "gatsby-image"
 
 const StyledProduct = styled.div` 
   display: none;
