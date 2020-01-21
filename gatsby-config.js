@@ -1,4 +1,5 @@
 module.exports = {
+  assetPrefix: `http://byronchang.com/plattpublished`,
   siteMetadata: {
     title: `Byron Chang - Code Challenge - Platt`,
     description: `Using React, Gatsby, and Styled Components to build out a landing page.`,

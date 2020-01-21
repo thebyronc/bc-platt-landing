@@ -43,7 +43,7 @@ const StyledGrids = styled.div`
     ;
   }
   @media (min-width: ${breakpoints.desktop}) {
-    grid-template-rows: 220px 220px 220px 220px;
+    grid-template-rows: 240px 240px 240px 240px;
     grid-gap: 32px;
   }
 `

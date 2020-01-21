@@ -13,3 +13,8 @@ cd bc-platt-landing
 npm install
 gatsby develop
 ```
+
+To Build the site
+```
+gatsby build
+``
